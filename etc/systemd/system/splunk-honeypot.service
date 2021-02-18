@@ -1,6 +1,6 @@
-# /etc/systemd/system/manuka.service
+# /etc/systemd/system/splunk-honeypot.service
 [Unit]
-Description=manuka
+Description=splunk-honeypot
 Requires=docker.service
 After=docker.service
 [Service]
@@ -8,9 +8,9 @@ Restart=always
 RestartSec=5
 TimeoutSec=infinity
 # Working directory
-WorkingDirectory=/opt/manuka
+WorkingDirectory=/opt/splunk-honeypot
 # Get public ip
-ExecStartPre=-/opt/manuka/bin/get-publicip.sh
+ExecStartPre=-/opt/splunk-honeypot/bin/get-publicip.sh
 # Remove old containers, images and volumes
 ExecStartPre=-/usr/local/bin/docker-compose down -v
 ExecStartPre=-/usr/local/bin/docker-compose rm -v

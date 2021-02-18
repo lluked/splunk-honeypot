@@ -16,9 +16,9 @@ services:
     volumes:
       - $baseDir/docker/honeypot/cowrie/etc/cowrie.cfg:/home/cowrie/cowrie/etc/cowrie.cfg:ro
       - $baseDir/docker/honeypot/cowrie/etc/userdb.txt:/home/cowrie/cowrie/etc/userdb.txt:ro
-      - $baseDir/var/log/honeypot/cowrie:/home/cowrie/cowrie/var/log
-      - $baseDir/var/data/honeypot/cowrie/dl:/home/cowrie/cowrie/var/dl
-      - $baseDir/var/data/honeypot/cowrie/tty:/home/cowrie/cowrie/var/tty
+      - $baseDir/mnt/var/log/honeypot/cowrie:/home/cowrie/cowrie/var/log
+      - $baseDir/mnt/var/data/honeypot/cowrie/dl:/home/cowrie/cowrie/var/dl
+      - $baseDir/mnt/var/data/honeypot/cowrie/tty:/home/cowrie/cowrie/var/tty
     networks:
       - cowrie
 # Networks

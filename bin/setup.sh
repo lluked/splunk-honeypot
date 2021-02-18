@@ -85,7 +85,7 @@ backupConfig "/opt/splunk-honeypot/docker/traefik/etc/conf/traefik.htpasswd" "./
 backupConfig "/opt/splunk-honeypot/docker/traefik/etc/conf/splunk.htpasswd" "./splunk.htpasswd.bak"
 # copy opt
 cp -r ./opt/splunk-honeypot /opt
-echo "copied manuka to /opt"
+echo "copied splunk-honeypot to /opt"
 # restore configs
 restoreConfig "./traefik.htpasswd.bak" "/opt/splunk-honeypot/docker/traefik/etc/conf/traefik.htpasswd"
 restoreConfig "./splunk.htpasswd.bak" "/opt/splunk-honeypot/docker/traefik/etc/conf/splunk.htpasswd"
@@ -115,8 +115,8 @@ cp ./etc/logrotate.d/splunk-honeypot /etc/logrotate.d/
 cp ./etc/systemd/system/splunk-honeypot.service /etc/systemd/system/
 chmod 644 /etc/systemd/system/splunk-honeypot.service
 systemctl daemon-reload
-systemctl enable manuka
-systemctl start manuka
+systemctl enable splunk-honeypot
+systemctl start splunk-honeypot
 }
 ### Main ###
 checkRoot
