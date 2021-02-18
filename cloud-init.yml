@@ -1,0 +1,17 @@
+#cloud-config
+timezone: ${timezone}
+
+repo_update: true
+repo_upgrade: all
+
+packages:
+  - git
+
+runcmd:
+  - git clone --depth=1 https://github.com/lluked/splunk-honeypot /home/ubuntu/splunk-honeypot
+  - cd /home/ubuntu/splunk-honeypot
+  - ./bin/setup.sh auto
+  - usermod -aG docker ubuntu
+  - htpasswd -bc /opt/splunk-honeypot/docker/traefik/etc/conf/traefik.htpasswd ${traefikUser} ${traefikPassword}
+  - htpasswd -bc /opt/splunk-honeypot/docker/traefik/etc/conf/splunk.htpasswd ${splunkUser} ${splunkPassword}
+  - shutdown -r now
