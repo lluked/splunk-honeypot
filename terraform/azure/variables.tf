@@ -4,8 +4,7 @@ variable "region" {
 
 # vm
 variable "vmUser" {
-    type = string
-    description = "Username for virtual machine"
+  default = "ubuntu"
 }
 
 # cloud-init
@@ -19,8 +18,12 @@ variable "traefikUser" {
 variable "traefikPassword" {
 }
 
-variable "splunkUser" {
+variable "splunkProxyUser" {
+  default = "splunk"
 }
 
-variable "splunkPassword" {
+variable "splunkProxyPassword" {
+}
+
+variable "splunkAdminPassword" {
 }
