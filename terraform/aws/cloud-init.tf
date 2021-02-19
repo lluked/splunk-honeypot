@@ -7,8 +7,9 @@ data "template_file" "script" {
     vmUser = var.vmUser,
     traefikUser = var.traefikUser,
     traefikPassword = var.traefikPassword,
-    splunkUser = var.splunkUser,
-    splunkPassword = var.splunkPassword
+    splunkProxyUser = var.splunkProxyUser,
+    splunkProxyPassword = var.splunkProxyPassword
+    splunkAdminPassword = var.splunkAdminPassword
   }
 }
 
