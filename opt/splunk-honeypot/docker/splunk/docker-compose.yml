@@ -19,9 +19,9 @@ services:
       SPLUNK_APPS_URL: https://github.com/lluked/cowrie-splunk-app/archive/main.tar.gz
       SPLUNK_PASSWORD: $SPLUNK_PASSWORD
     volumes:
-      - $baseDir/docker/splunk/opt/splunk/etc/system/local/limits.conf:/opt/splunk/etc/system/local/limits.conf:ro
-      - $baseDir/docker/splunk/opt/splunk/etc/system/local/web.conf:/opt/splunk/etc/system/local/web.conf:ro
-      - $baseDir/opt/splunk/etc/apps/cowrie-splunk-app-main/local/inputs.conf:/opt/splunk/etc/apps/cowrie-splunk-app-main/local/inputs.conf:ro
+      - $baseDir/docker/splunk/opt/splunk/etc/system/local/limits.conf:/opt/splunk/etc/system/local/limits.conf
+      - $baseDir/docker/splunk/opt/splunk/etc/system/local/web.conf:/opt/splunk/etc/system/local/web.conf
+      - $baseDir/docker/splunk/opt/splunk/etc/apps/cowrie-splunk-app-main/local/inputs.conf:/opt/splunk/etc/apps/cowrie-splunk-app-main/local/inputs.conf
       - $baseDir/mnt/var/log/honeypot:/var/log/honeypot:ro
     # ports:
     #   - "8000:8000"
