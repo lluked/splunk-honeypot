@@ -29,7 +29,7 @@ This application stack uses docker compose and is intended to be deployed with T
   - Check progress by sshing into the instance with the created private key file
     - Run 'sudo systemctl status splunk-honeypot' to check the service status
     - Run 'docker ps' to check docker status
-    - Once 'docker ps' shows the containers are running wait a couple of minutes for elasticsearch to finish starting.
+    - Once 'docker ps' shows the containers are running wait a couple of minutes for splunk to finish starting.
 - Access Splunk with the reverse proxy user and the password variables provided and the outputted url
 - Login to splunk with admin credentials.
 - View the Cowrie Dashboard and watch the attacks come in.
