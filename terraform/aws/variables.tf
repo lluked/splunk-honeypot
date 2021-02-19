@@ -53,9 +53,12 @@ variable "traefikUser" {
 variable "traefikPassword" {
 }
 
-variable "splunkUser" {
+variable "splunkProxyUser" {
   default = "splunk"
 }
 
-variable "splunkPassword" {
+variable "splunkProxyPassword" {
+}
+
+variable "splunkAdminPassword" {
 }

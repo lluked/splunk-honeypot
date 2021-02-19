@@ -13,5 +13,6 @@ runcmd:
   - ./bin/setup.sh auto
   - usermod -aG docker ubuntu
   - htpasswd -bc /opt/splunk-honeypot/docker/traefik/etc/conf/traefik.htpasswd ${traefikUser} ${traefikPassword}
-  - htpasswd -bc /opt/splunk-honeypot/docker/traefik/etc/conf/splunk.htpasswd ${splunkUser} ${splunkPassword}
+  - htpasswd -bc /opt/splunk-honeypot/docker/traefik/etc/conf/splunk.htpasswd ${splunkProxyUser} ${splunkProxyPassword}
+  - sed -i 's|SPLUNK_PASSWORD=CHANG3_M3|SPLUNK_PASSWORD='${splunkAdminPassword}'|' /opt/splunk-honeypot/.env
   - shutdown -r now
