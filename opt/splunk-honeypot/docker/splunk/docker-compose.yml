@@ -18,11 +18,10 @@ services:
       SPLUNK_START_ARGS: "--accept-license"
       SPLUNK_APPS_URL: https://github.com/lluked/cowrie-splunk-app/archive/main.tar.gz
       SPLUNK_PASSWORD: $SPLUNK_PASSWORD
-    env_file:
-      - $baseDir/ip.env
     volumes:
       - $baseDir/docker/splunk/opt/splunk/etc/system/local/limits.conf:/opt/splunk/etc/system/local/limits.conf
       - $baseDir/docker/splunk/opt/splunk/etc/system/local/web.conf:/opt/splunk/etc/system/local/web.conf
+
       # - $baseDir/opt/splunk/etc/apps/:/opt/splunk/etc/apps/
       - $baseDir/mnt/var/log/honeypot:/var/log/honeypot:ro
     # ports:
