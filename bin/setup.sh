@@ -7,9 +7,9 @@ installer=$1
 # functions
 function checkRoot {
 if [[ "$(whoami)" != "root" ]]; then
-    echo "Please run as root."
-    echo "e.g. sudo $0"
-    exit
+  echo "Please run as root."
+  echo "e.g. sudo $0"
+  exit
 fi
 }
 function installDependencies {
